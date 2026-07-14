@@ -1,1 +1,3 @@
-Try It : https://toynime.github.io/Card-game/
+<a href="https://toynime.github.io/Card-game/" target="_blank">
+  Click Here
+</a>
