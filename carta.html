@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-color: brown;
+        }
+   .main{
+    display: flex;
+    justify-content: space-between;
+   }
+
+   .p1,.p2{
+    width: 500px;
+    display: flex;
+    flex-wrap:wrap;
+   }
+   #button{
+    height: 80px;
+    width:99px;
+    margin-top:50px;
+    font-size: 40px;
+    font-weight: bold;
+    color:yellow;
+    background-color: black;
+    cursor:pointer;
+    border-radius: 10px;
+   }
+
+
+   img{
+    cursor: pointer;
+    margin-right:4px;
+    width:120px;
+    height:170px;
+   }
+
+@keyframes aaa{
+    from { transform: rotate(-5deg); }
+    to   { transform: rotate(5deg); }
+}
+
+
+
+   .p2 img{
+    opacity: 0;
+   }
+   .p2{
+        background-color: black;
+   }
+
+
+   .position{
+    position: absolute;
+    top:calc(55% - 60px);
+    left: calc(50% - 45px)
+    
+   }
+   </style>
+</head>
+<body>
+<div class="main">
+    <div class="p1"></div>
+     <input type="button" value="+" id="button">
+    <div class="p2"></div>
+</div>
+
+<div class="position">
+</div>
+    <script>
+let hrawd1 = document.createElement("img"); hrawd1.src = "images/hrawd1.png"; hrawd1.alt = "hrawd1";
+let hrawd2 = document.createElement("img"); hrawd2.src = "images/hrawd2.png"; hrawd2.alt = "hrawd2";
+let hrawd3 = document.createElement("img"); hrawd3.src = "images/hrawd3.png"; hrawd3.alt = "hrawd3";
+let hrawd4 = document.createElement("img"); hrawd4.src = "images/hrawd4.png"; hrawd4.alt = "hrawd4";
+let hrawd5 = document.createElement("img"); hrawd5.src = "images/hrawd5.png"; hrawd5.alt = "hrawd5";
+let hrawd6 = document.createElement("img"); hrawd6.src = "images/hrawd6.png"; hrawd6.alt = "hrawd6";
+let hrawd7 = document.createElement("img"); hrawd7.src = "images/hrawd7.png"; hrawd7.alt = "hrawd7";
+let hrawd10 = document.createElement("img"); hrawd10.src = "images/hrawd10.png"; hrawd10.alt = "hrawd10";
+let hrawd11 = document.createElement("img"); hrawd11.src = "images/hrawd11.png"; hrawd11.alt = "hrawd11";
+let hrawd12 = document.createElement("img"); hrawd12.src = "images/hrawd12.png"; hrawd12.alt = "hrawd12";
+
+let tbayg1 = document.createElement("img"); tbayg1.src = "images/tbayg1.png"; tbayg1.alt = "tbayg1";
+let tbayg2 = document.createElement("img"); tbayg2.src = "images/tbayg2.png"; tbayg2.alt = "tbayg2";
+let tbayg3 = document.createElement("img"); tbayg3.src = "images/tbayg3.png"; tbayg3.alt = "tbayg3";
+let tbayg4 = document.createElement("img"); tbayg4.src = "images/tbayg4.png"; tbayg4.alt = "tbayg4";
+let tbayg5 = document.createElement("img"); tbayg5.src = "images/tbayg5.png"; tbayg5.alt = "tbayg5";
+let tbayg6 = document.createElement("img"); tbayg6.src = "images/tbayg6.png"; tbayg6.alt = "tbayg6";
+let tbayg7 = document.createElement("img"); tbayg7.src = "images/tbayg7.png"; tbayg7.alt = "tbayg7";
+let tbayg10 = document.createElement("img"); tbayg10.src = "images/tbayg10.png"; tbayg10.alt = "tbayg10";
+let tbayg11 = document.createElement("img"); tbayg11.src = "images/tbayg11.png"; tbayg11.alt = "tbayg11";
+let tbayg12 = document.createElement("img"); tbayg12.src = "images/tbayg12.png"; tbayg12.alt = "tbayg12";
+
+let syof1 = document.createElement("img"); syof1.src = "images/syof1.png"; syof1.alt = "syof1";
+let syof2 = document.createElement("img"); syof2.src = "images/syof2.png"; syof2.alt = "syof2";
+let syof3 = document.createElement("img"); syof3.src = "images/syof3.png"; syof3.alt = "syof3";
+let syof4 = document.createElement("img"); syof4.src = "images/syof4.png"; syof4.alt = "syof4";
+let syof5 = document.createElement("img"); syof5.src = "images/syof5.png"; syof5.alt = "syof5";
+let syof6 = document.createElement("img"); syof6.src = "images/syof6.png"; syof6.alt = "syof6";
+let syof7 = document.createElement("img"); syof7.src = "images/syof7.png"; syof7.alt = "syof7";
+let syof10 = document.createElement("img"); syof10.src = "images/syof10.png"; syof10.alt = "syof10";
+let syof11 = document.createElement("img"); syof11.src = "images/syof11.png"; syof11.alt = "syof11";
+let syof12 = document.createElement("img"); syof12.src = "images/syof12.png"; syof12.alt = "syof12";
+
+let flos1 = document.createElement("img"); flos1.src = "images/flos1.png"; flos1.alt = "flos1";
+let flos2 = document.createElement("img"); flos2.src = "images/flos2.png"; flos2.alt = "flos2";
+let flos3 = document.createElement("img"); flos3.src = "images/flos3.png"; flos3.alt = "flos3";
+let flos4 = document.createElement("img"); flos4.src = "images/flos4.png"; flos4.alt = "flos4";
+let flos5 = document.createElement("img"); flos5.src = "images/flos5.png"; flos5.alt = "flos5";
+let flos6 = document.createElement("img"); flos6.src = "images/flos6.png"; flos6.alt = "flos6";
+let flos7 = document.createElement("img"); flos7.src = "images/flos7.png"; flos7.alt = "flos7";
+let flos10 = document.createElement("img"); flos10.src = "images/flos10.png"; flos10.alt = "flos10";
+let flos11 = document.createElement("img"); flos11.src = "images/flos11.png"; flos11.alt = "flos11";
+let flos12 = document.createElement("img"); flos12.src = "images/flos12.png"; flos12.alt = "flos12";
+let table = [
+    hrawd1, hrawd2, hrawd3, hrawd4, hrawd5, hrawd6, hrawd7, hrawd10, hrawd11, hrawd12,
+    tbayg1, tbayg2, tbayg3, tbayg4, tbayg5, tbayg6, tbayg7, tbayg10, tbayg11, tbayg12,
+    syof1, syof2, syof3, syof4, syof5, syof6, syof7, syof10, syof11, syof12,
+    flos1, flos2, flos3, flos4, flos5, flos6, flos7, flos10, flos11, flos12
+];
+
+
+document.querySelector(".p1").append(
+    table[Math.floor(Math.random()*40)].cloneNode(),
+    table[Math.floor(Math.random()*40)].cloneNode(),
+    table[Math.floor(Math.random()*40)].cloneNode(),
+    table[Math.floor(Math.random()*40)].cloneNode()
+);
+document.querySelector(".p2").append(
+    table[Math.floor(Math.random()*40)].cloneNode(),
+    table[Math.floor(Math.random()*40)].cloneNode(),
+    table[Math.floor(Math.random()*40)].cloneNode(),
+    table[Math.floor(Math.random()*40)].cloneNode()
+);
+let tableNorm = [
+    hrawd1, hrawd3, hrawd4, hrawd5, hrawd10, hrawd12,
+    tbayg1, tbayg3, tbayg4, tbayg5, tbayg10, tbayg12,
+    syof1, syof3, syof4, syof5, syof10, syof12,
+    flos1, flos3, flos4, flos5, flos10, flos12
+];
+document.querySelector(".position").append(tableNorm[Math.floor(Math.random()*tableNorm.length)].cloneNode());
+
+
+document.querySelector(".p1").addEventListener("click",function(event){
+    let curent=document.querySelector(".position").firstElementChild;
+    let weapen=document.querySelector(".position").firstElementChild.alt[0];
+    if(event.target.alt[0]!=weapen && event.target.alt.match(/\d+$/)[0]!=curent.alt.match(/\d+$/)[0] && !event.target.alt.endsWith("11")){
+        event.target.style.animation = "none";
+        void event.target.offsetWidth;
+        event.target.style.animation = "aaa 0.1s ease 10";
+    }
+    else{
+        document.querySelector(".position").children[0].remove();
+        document.querySelector(".position").append(event.target);
+        console.log(document.querySelector(".p1").children.length)
+
+    }
+})
+    </script>
+</body>
+</html>
