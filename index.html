@@ -8,7 +8,8 @@
    .main{
     display: flex;
     justify-content: space-between;
-   }
+    align-items: flex-start;
+}
 
    .p1,.p2{
     width: 500px;
@@ -41,28 +42,67 @@
 }
 
 
-
-   .p2 img{
-    opacity: 0;
-   }
-   .p2{
-        background-color: black;
-   }
-
-
    .position{
     position: absolute;
     top:calc(55% - 60px);
     left: calc(50% - 45px)
     
    }
+
+   #overlay {
+    position: fixed;
+    inset: 0;
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+
+    z-index: 9999;
+}
+
+#popup {
+    background: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 520px;
+    height: 340px;
+}
+#popup img{
+    transition: all 0.5s;
+}
+#popup img:hover{
+    margin-bottom: 65px;
+}
+
+#mess1,#mess2{
+    align-self: center;
+    transition: all 2s;
+    color: white;
+    font-size: 25px;
+}
    </style>
 </head>
 <body>
 <div class="main">
     <div class="p1"></div>
+    <div id="mess1"></div>
      <input type="button" value="+" id="button">
+     <div id="mess2"></div>
     <div class="p2"></div>
+</div>
+
+<div id="overlay">
+    <div id="popup">
+        <h2 style="color: white;">Choose: </h2><br>
+        <img src="images/syof.png" alt="syof">
+        <img src="images/flos.png" alt="flos">
+        <img src="images/hrawd.png" alt="hrawd">
+        <img src="images/tbay9.png" alt="tbay9">
+    </div>
 </div>
 
 <div class="position">
@@ -130,7 +170,10 @@ document.querySelector(".p2").append(
     table[Math.floor(Math.random()*40)].cloneNode(),
     table[Math.floor(Math.random()*40)].cloneNode(),
     table[Math.floor(Math.random()*40)].cloneNode()
-);
+);cover();
+
+
+
 let tableNorm = [
     hrawd1, hrawd3, hrawd4, hrawd5, hrawd10, hrawd12,
     tbayg1, tbayg3, tbayg4, tbayg5, tbayg10, tbayg12,
@@ -139,22 +182,66 @@ let tableNorm = [
 ];
 document.querySelector(".position").append(tableNorm[Math.floor(Math.random()*tableNorm.length)].cloneNode());
 
-
+let weapen;
 document.querySelector(".p1").addEventListener("click",function(event){
     let curent=document.querySelector(".position").firstElementChild;
-    let weapen=document.querySelector(".position").firstElementChild.alt[0];
+    if(!weapen){
+    weapen=curent.alt[0];
+    }
     if(event.target.alt[0]!=weapen && event.target.alt.match(/\d+$/)[0]!=curent.alt.match(/\d+$/)[0] && !event.target.alt.endsWith("11")){
         event.target.style.animation = "none";
         void event.target.offsetWidth;
         event.target.style.animation = "aaa 0.1s ease 10";
     }
     else{
-        document.querySelector(".position").children[0].remove();
-        document.querySelector(".position").append(event.target);
-        console.log(document.querySelector(".p1").children.length)
+        weapen=event.target.alt[0];
+
+        if(event.target.alt.endsWith("11")){
+            document.getElementById("overlay").style.display="flex";
+            document.getElementById("popup").addEventListener("click",function(event){
+                weapen=event.target.alt[0];
+                document.getElementById("overlay").style.display="none";
+            })
+        }
+
+        let ll;
+        if(event.target.alt.endsWith("7") || event.target.alt.endsWith("6")){
+            if(event.target.alt.endsWith("7")){
+                ll="+2";
+                document.querySelector(".p2").append(table[Math.floor(Math.random()*40)].cloneNode(),table[Math.floor(Math.random()*40)].cloneNode());
+            }if(event.target.alt.endsWith("6")){
+                ll="+1";
+                document.querySelector(".p2").append(table[Math.floor(Math.random()*40)].cloneNode());
+            }
+            cover();
+             mess2.textContent = ll;
+             mess2.style.opacity = "1";
+
+        setTimeout(() => {
+        mess2.style.opacity = "0";
+    }, 1000);
+           
+
+        }
+
+        
+        document.querySelector(".position").replaceChild(event.target,document.querySelector(".position").firstElementChild);
+
 
     }
 })
+
+
+document.getElementById("button").addEventListener("click",function(){
+    document.getElementsByClassName("p1")[0].append(table[Math.floor(Math.random()*40)].cloneNode());
+})
+
+
+
+function cover(){
+for(let i=0;i<document.querySelector(".p2").children.length;i++){
+  document.querySelector(".p2").children[i].src="images/back.PNG";
+}}
     </script>
 </body>
 </html>
